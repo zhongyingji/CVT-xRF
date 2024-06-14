@@ -1,0 +1,45 @@
+expname = blender_lego_3v_nerf
+basedir = ./logs
+datadir = ./data/nerf_synthetic/lego
+dataset_type = blender
+
+sp_n_train = 3
+no_batching = True
+half_res = False
+white_bkgd = True
+lrate_decay = 500
+
+N_rand = 1024
+N_samples = 64
+N_importance = 128
+
+use_viewdirs = True
+raw_noise_std = 1e0
+
+N_iters = 50000
+testchunk = 4096
+
+use_barf_pe = False
+
+# voxel-based rays sampler
+voxel_num = 64
+sample_n_voxels = 64
+n_rays_per_voxel = 16
+num_workers = 4
+voxel_sampler_rays_thsh = 8
+radius_div = 2
+
+# transformer
+n_encoder_layers = 2
+n_decoder_layers = 2
+n_heads = 1
+encoder_input_method = alph_embed
+
+# loss
+use_triplet_loss = True
+margin = 0.5
+w_triplet_loss = 0.1
+
+
+
+

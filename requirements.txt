@@ -1,0 +1,14 @@
+# torch==1.11.0
+# torchvision>=0.9.1
+imageio
+imageio-ffmpeg
+matplotlib==3.5.3
+configargparse
+tensorboard>=2.0
+tqdm
+opencv-python
+pytorch_msssim
+lpips
+ninja
+scipy==1.7.3
+scikit-image

@@ -1,0 +1,45 @@
+expname = dtu_scan40_9v_barf
+basedir = ./logs
+datadir = ./data/rs_dtu_4/DTU/scan40
+dtu_maskdir = ./data/DTU_mask/idrmasks/scan40
+dataset_type = dtu
+dtu_reader = sparf
+
+sp_n_train = 9
+no_batching = True
+
+N_rand = 1024
+N_samples = 64
+N_importance = 128
+
+use_viewdirs = True
+raw_noise_std = 1e0
+
+N_iters = 150000
+testchunk = 4096
+
+# barf c2f
+use_barf_pe = True
+transformer_use_barf_pe = True
+barf_pe_coarse = 0.1
+barf_pe_fine = 0.5
+
+# voxel-based rays sampler config
+voxel_num = 64
+sample_n_voxels = 64
+n_rays_per_voxel = 16
+num_workers = 4
+voxel_sampler_rays_thsh = 8
+radius_div = 4
+
+# transformer config
+n_encoder_layers = 2
+n_decoder_layers = 2
+n_heads = 1
+encoder_input_method = alph_embed
+
+# loss config
+use_contrastive_loss = True
+contrastive_temperature = 0.5
+w_contrastive_loss = 0.1
+contrastive_config = random_positive

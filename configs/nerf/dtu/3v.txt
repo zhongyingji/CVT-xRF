@@ -1,0 +1,44 @@
+expname = dtu_scan40_3v_nerf
+basedir = ./logs
+datadir = ./data/rs_dtu_4/DTU/scan40
+dtu_maskdir = ./data/DTU_mask/idrmasks/scan40
+dataset_type = dtu
+dtu_reader = default
+
+sp_n_train = 3
+no_batching = True
+
+N_rand = 1024
+N_samples = 64
+N_importance = 128
+
+use_viewdirs = True
+raw_noise_std = 1e0
+
+N_iters = 50000
+testchunk = 4096
+
+use_barf_pe = False
+
+# voxel-based rays sampler
+voxel_num = 64
+sample_n_voxels = 64
+n_rays_per_voxel = 16
+num_workers = 4
+voxel_sampler_rays_thsh = 8
+radius_div = 4
+
+# transformer
+n_encoder_layers = 2
+n_decoder_layers = 2
+n_heads = 1
+encoder_input_method = alph_embed
+
+# loss
+use_triplet_loss = True
+margin = 0.5
+w_triplet_loss = 0.1
+
+
+
+

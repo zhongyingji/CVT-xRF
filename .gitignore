@@ -1,0 +1,14 @@
+**/.ipynb_checkpoints
+**/__pycache__
+**/vox_ray_storage/
+**/debug_scripts/
+**/data/
+**/logs/
+**/training_log/
+**/spc_cache/
+**/checkpoints/
+**/eval_dir/
+**/log_dir/
+**/tensorboard_dir/
+**/local.py
+**/PDCNet_megadepth.pth.tar
