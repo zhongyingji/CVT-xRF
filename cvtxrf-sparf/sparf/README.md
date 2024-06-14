@@ -2,7 +2,7 @@
 
 <a href='https://arxiv.org/abs/2403.16885'><img src='https://img.shields.io/badge/arXiv-2403.16885-b31b1b.svg'></a> &nbsp; <a href='https://zhongyingji.github.io/CVT-xRF/'><img src='https://img.shields.io/badge/Project-Page-Green'></a>  
 
-This repository integrates the proposed CVT module into [SPARF](https://github.com/google-research/sparf). This repository integrates the proposed CVT module into SPARF. The [diff.txt](./diff.txt) file contains the list of modified or newly added files compared to the original repository.
+This repository integrates the proposed CVT module into [SPARF](https://github.com/google-research/sparf). The [diff.txt](./diff.txt) file contains the list of modified or newly added files compared to the original repository.
 
 **NOTE:** for historical reasons, "spc" in the code or the following scripts refer to "CVT", which is relevant to the proposed CVT module of our paper. 
 
