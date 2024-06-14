@@ -3,7 +3,7 @@
 <a href='https://arxiv.org/abs/2403.16885'><img src='https://img.shields.io/badge/arXiv-2403.16885-b31b1b.svg'></a> &nbsp; <a href='https://zhongyingji.github.io/CVT-xRF/'><img src='https://img.shields.io/badge/Project-Page-Green'></a>  
 
 This repository contains the code release for the CVPR 2024 project: 
-> [**CVT-xRF: Contrastive In-Voxel Transformer for 3D Consistent Radiance Fields from Sparse Inputs**](https://arxiv.org/abs/),  
+> [**CVT-xRF: Contrastive In-Voxel Transformer for 3D Consistent Radiance Fields from Sparse Inputs**](https://arxiv.org/abs/2403.16885),  
 > Yingji Zhong, Lanqing Hong, Zhenguo Li, and Dan Xu  
 > Computer Vision and Pattern Recognition (CVPR), 2024
 <br/>
