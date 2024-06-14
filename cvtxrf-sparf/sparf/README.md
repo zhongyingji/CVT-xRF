@@ -6,15 +6,15 @@ This repository integrates the proposed CVT module into [SPARF](https://github.c
 
 **NOTE:** for historical reasons, "spc" in the code or the following scripts refer to "CVT", which is relevant to the proposed CVT module of our paper. 
 
-## Installation
 --------------------------------------
+## Installation
 Please follow the installation step in [SPARF](https://github.com/google-research/sparf) to set up an environment. It is strongly suggested to run the following command to check if everything is set correctly: 
 ```
 python third_party/test_pdcnet_installation.py
 ```
 
-## Datasets
 --------------------------------------
+## Datasets
 For CVT-xRF (w/ SPARF) (this modified codebase), we only support DTU dataset for training and evaluation. 
 Modify several lines in `source/admin/local.py` to define the path of the DTU dataset: 
 ```
@@ -23,9 +23,8 @@ self.dtu_depth = '' # it is OK to leave it null
 self.dtu_mask = 'YOUR_PATH_TO_DTU_MASK/idrmasks/'
 ```
 
-
-## Running the code
 --------------------------------------
+## Running the code
 ### Training
 * **Preprocess:** Our proposed voxel-based ray sampling module records rays from training views that each voxel intersects with. Templates of running the preprocessing step are shown below, remember to replace `<input_views>` and `<scene>` with specific numbers of training views and scenes ([Examples](./scripts/examples_sparf_preprocess.sh)). This step typcalily takes 5-10 minutes. 
   ```
@@ -48,7 +47,7 @@ self.dtu_mask = 'YOUR_PATH_TO_DTU_MASK/idrmasks/'
       Otherwise, the above preprocessing step is necessary for each scene before training. 
 
 * **Train:** 
-  Once you have completed the preprocessing step, you can train the model using the provided script. Make sure to replace `<input_views>` and `<scene>` in the script with the actual values you used when running the preprocessing script. ([Examples](./scripts/examples_sparf_train.sh)). 
+  Once you have completed the preprocessing step, you can train the model using the provided script. Make sure to replace `<input_views>` and `<scene>` in the script with the actual values you used when running the preprocessing script ([Examples](./scripts/examples_sparf_train.sh)). 
   ```
   # DTU template
   python run_trainval.py nerf_training_w_gt_poses/dtu spc_sparf \
@@ -65,8 +64,8 @@ Remember to replace the `<input_views>` and `<scene>` in the following scripts w
   python eval.py --ckpt_dir checkpoints/nerf_training_w_gt_poses/dtu/subset_<input_views>/scan<scene>/spc_sparf --out_dir ./rendertest/ --expname spc_scan<scene>_<input_views>v --plot=True
   ```
 
-## Citation
 --------------------------------------
+## Citation
 If you find our project helpful, please cite it as: 
 ```
 @inproceedings{zhong2024cvt,

@@ -13,8 +13,9 @@ This repository contains the code release for the CVPR 2024 project:
 Our approach CVT-xRF explicitly models 3D radiance field consistency for sparse-inputs NeRF, which comprises three components, (i) voxel-based ray sampling; (ii) local implicit constraint with in-voxel transformer; (iii) global explicit constraint with contrastive loss. The CVT module can be plugged into different baselines, e.g., vanilla NeRF, BARF and SPARF. 
 <br/>
 
-## Installation
 --------------------------------------
+
+## Installation
 It is recommended to use Anaconda to set up the environment. Create a new enviroment `cvtxrf` and activate it: 
 ```
 conda create -n cvtxrf python=3.7
@@ -28,8 +29,8 @@ pip install torch==1.11.0+cu113 torchvision==0.12.0+cu113 torchaudio==0.11.0 --e
 pip install -r requirements.txt
 ```
 
-## Datasets
 --------------------------------------
+## Datasets
 Currently, we only support two datasets for training, DTU and Synthetic datasets. We first create a data root by `mkdir data/`. 
 
 **DTU:** We use the DTU dataset provided by pixelNeRF. The images are processed and resized to 300x400. Download the dataset [here](https://drive.google.com/drive/folders/1PsT3uKwqHHD2bEEHkIXB99AlIjtmrEiR?usp=sharing). We also report masked metrics following [RegNeRF](https://github.com/google-research/google-research/tree/master/regnerf). Download the masks for test split [here](https://drive.google.com/file/d/1Yt5T3LJ9DZDiHbtd9PDFNHqJAd7wt-_E/view?usp=sharing). 
@@ -51,9 +52,8 @@ Place the downloaded datasets and masks in `data/`. The directory should be like
 |   |   └── ...
 ```
 
-
-## Running the code
 --------------------------------------
+## Running the code
 The following instructions will guide you run our method on the baseline of BARF, which is CVT-xRF (w/ BARF) in the paper. For applying CVT module on SPARF, i.e., CVT-xRF (w/ SPARF), please refer to [this page](./cvtxrf-sparf/sparf/). 
 ### Training
 * **Preprocess:** 
@@ -86,7 +86,7 @@ Below are templates for running the preprocessing step. Please replace `<input_v
   **NOTE:** The above step is necessary for each scene before training. 
 
 * **Train:** 
-Once you have completed the preprocessing step, you can train the model using the provided script. Make sure to replace `<input_views>` and `<scene>` in the script with the actual values you used when running the preprocessing script. ([Examples](./scripts/example_barf_train.sh)). 
+Once you have completed the preprocessing step, you can train the model using the provided script. Make sure to replace `<input_views>` and `<scene>` in the script with the actual values you used when running the preprocessing script ([Examples](./scripts/example_barf_train.sh)). 
   ```
   # DTU template
   python run_nerf.py --config configs/barf/dtu/<input_views>v.txt \
@@ -102,10 +102,10 @@ Once you have completed the preprocessing step, you can train the model using th
   The training lasts no more than 3 hours on a 3090Ti GPU. The above scripts also evaluate on test split, and render videos at the end of the training. 
 
 ### Evaluation
-**Test or render videos of a trained model:** Once the training process is complete, you can test or render videos using the same script that was used for training. Simply append either `--test_only` or `--render_only` to the script, depending on your desired operation. ([Examples](./scripts/example_barf_eval.sh)).
+**Test or render videos of a trained model:** Once the training process is complete, you can test or render videos using the same script that was used for training. Simply append either `--test_only` or `--render_only` to the script, depending on your desired operation ([Examples](./scripts/example_barf_eval.sh)).
 
-## Citation
 --------------------------------------
+## Citation
 If you find our project helpful, please cite it as: 
 ```
 @inproceedings{zhong2024cvt,
@@ -116,6 +116,6 @@ If you find our project helpful, please cite it as:
 }
 ```
 
-## Acknowledgements
 --------------------------------------
+## Acknowledgements
 This code is mainly based on [nerf-pytorch](https://github.com/yenchenlin/nerf-pytorch). It also integrates code snippets from [DIVeR](https://github.com/lwwu2/diver) and [SPARF](https://github.com/google-research/sparf). We thank the authors for their great works. 
